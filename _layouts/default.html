@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo_v2_128.png">
+
+{% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name"><img src="assets/images/logo_128.png" style="width: 70px; height: 70px; margin-bottom: -20px;">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+        <a href="https://drive.google.com/file/d/1XsyCPHhEHngUkYst3pPCtWwKuq2q0XBW" class="btn" style="color: #696969">Download KABR.zip</a>
+        <a href="404.html" class="btn" style="color: #696969">Paper</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        <span style="text-align: center">This project is the result of the collaborative work of the <a href="https://imageomics.osu.edu"><code>Imageomics Institute</code></a>.</span>
+        <img src="assets/images/footer_color.png">
+      </footer>
+    </main>
+  </body>
+</html>
