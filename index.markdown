@@ -39,12 +39,14 @@ Our team heavily utilized [CVAT](https://github.com/opencv/cvat) to manually adj
 
 The dataset includes a total of eight categories that describe various animal behaviors. These categories are `Walk`, `Graze`, `Browse`, `Head Up`, `Auto-Groom`, `Trot`, `Run`, and `Occluded`.
 
+<div class="gifs"></div>
+
 | **Walk** | ![](assets/gifs/examples/G0073-Walk.gif) | ![](assets/gifs/examples/ZP0632-Walk.gif) | ![](assets/gifs/examples/ZG0658-Walk.gif) |
 | :---: | :---: | :---: | :---: |
 | **Graze** | ![](assets/gifs/examples/ZG0658-Graze.gif) | ![](assets/gifs/examples/ZG0728-Graze.gif) | ![](assets/gifs/examples/ZP0554-Graze.gif) |
 | **Browse** | ![](assets/gifs/examples/G0078-Browse.gif) | ![](assets/gifs/examples/G0097-Browse.gif) | ![](assets/gifs/examples/G0105-Browse.gif) |
 | **Head Up** | ![](assets/gifs/examples/G0069-Head_Up.gif) | ![](assets/gifs/examples/ZG0668-Head_Up.gif) | ![](assets/gifs/examples/ZP0630-Head_Up.gif) |
-| **Auto-Groom** | ![](assets/gifs/examples/G0078-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0015-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0046-Auto-Groom.gif) |
+| <span id="auto-groom">**Auto-Groom**</span> | ![](assets/gifs/examples/G0078-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0015-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0046-Auto-Groom.gif) |
 | **Trot** | ![](assets/gifs/examples/ZG0217-Trot.gif) | ![](assets/gifs/examples/ZP0187-Trot.gif) | ![](assets/gifs/examples/ZP0198-Trot.gif) |
 | **Run** | ![](assets/gifs/examples/G0068-Run.gif) | ![](assets/gifs/examples/ZP0192-Run.gif) | ![](assets/gifs/examples/ZP0600-Run.gif) |
 | **Occluded** | ![](assets/gifs/examples/ZG0665-Occluded.gif) | ![](assets/gifs/examples/ZP0225-Occluded.gif) | ![](assets/gifs/examples/ZP0463-Occluded.gif) |
@@ -157,6 +159,8 @@ Due to the stabilization of the animal of interest at the center of the frame, t
 
 [Grad-CAM](https://arxiv.org/abs/1610.02391) is a visualization technique that provides insights into where a neural network focuses its attention within an image. By analyzing the gradient information flowing into the final convolutional layers of the network, Grad-CAM generates a heat map that highlights the regions of the image that contribute most significantly to the network's decision. In our case, Grad-CAM demonstrates that the neural network indeed prioritizes the exact animal in the center of the frame. There are two exceptions to consider: the `Run` and `Occluded` categories. In the case of `Run`, the background changes very rapidly, which allows the network to identify it as `Run`. In the case of the `Occluded` category, where the animal is not visible within the frame, the network shifts its attention to focus on other objects present.
 
+<div class="gifs"></div>
+
 | ![](assets/gifs/grad-cams/walk_1.gif) | ![](assets/gifs/grad-cams/walk_2.gif) | ![](assets/gifs/grad-cams/walk_3.gif) | ![](assets/gifs/grad-cams/walk_4.gif) |
  :---: | :---: | :---: | :---: |
 | ![](assets/gifs/grad-cams/graze_1.gif) | ![](assets/gifs/grad-cams/graze_2.gif) | ![](assets/gifs/grad-cams/graze_3.gif) | ![](assets/gifs/grad-cams/graze_4.gif) |
@@ -180,8 +184,22 @@ Coming soon...
 ```
 
 <style>
-table, tr, td, th {
+tr, td, th {
     border: none !important;
+}
+
+div.gifs + table tr, div.gifs + table td, div.gifs + table th {
+    border: none !important;
+    padding: 1px !important;
+  	line-height: 14px !important;
+}
+
+#auto-groom {
+    line-height: 25px !important;
+}
+
+td {
+  padding: 0px !important;
 }
 
 tr:nth-child(even), th {
