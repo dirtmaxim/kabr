@@ -20,11 +20,11 @@ To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/u
 
 ![](assets/images/mini-scene.jpg)
 
-Examples of mini-scenes extraction using the YOLOv8 object detection algorithm and improved SORT tracking algorithm can be found below, showcasing our technique of simulating the camera being perfectly aligned with each individual animal in the frame.
+<span id="youtube-standard-label">Examples of **mini-scenes** extraction are available on YouTube:</span>
 
-<div id="youtube-table"></div>
+<span id="youtube-minimized-label">Examples of **mini-scenes** extraction are available on YouTube: [**`Giraffes`**](https://youtu.be/_whg7JULVb8), [**`Zebras`**](https://youtu.be/msalx6tQ8RM).</span>
 
-<table>
+<table id="youtube-table">
     <thead>
         <tr>
             <th>
@@ -211,16 +211,25 @@ div.gifs + table th {
   	line-height: 14px !important;
 }
 
-div#youtube-table + table {
+#youtube-table {
+    display: block;
     width: 835px !important;; 
     margin-right: auto !important;
     margin-left: auto !important;
 }
 
-div#youtube-table + table tr,
-div#youtube-table + table td,
-div#youtube-table + table th {
+#youtube-table tr,
+#youtube-table td,
+#youtube-table th {
     padding: 15px !important;
+}
+
+#youtube-standard-label {
+    display: inline;
+}
+
+#youtube-minimized-label {
+    display: none;
 }
 
 #auto-groom {
@@ -228,20 +237,34 @@ div#youtube-table + table th {
 }
 
 td {
-  padding: 0px !important;
+    padding: 0px !important;
 }
 
 tr:nth-child(even), th {
-  background: #F8F8F8 !important;
+    background: #F8F8F8 !important;
 }
 
 h1 {
-  margin: 30px 0;
-  font-size: 4em;
-  letter-spacing: -1px;
+    margin: 30px 0;
+    font-size: 4em;
+    letter-spacing: -1px;
 }
 
 hr {
-  border-top: 1px solid #E3CD81FF !important;;
+    border-top: 1px solid #E3CD81FF !important;;
+}
+
+@media screen and (max-width: 1024px) {
+    #youtube-standard-label {
+        display: none;
+    }
+
+    #youtube-minimized-label {
+        display: inline;
+    }
+
+    #youtube-table {
+        display: none;
+    }
 }
 </style>
