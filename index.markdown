@@ -20,9 +20,9 @@ To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/u
 
 ![](assets/images/mini-scene.jpg)
 
-<span id="youtube-standard-label">Examples of **mini-scenes** extraction are available on YouTube:</span>
+<span id="youtube-standard-label">Examples of mini-scenes extraction are available on YouTube:</span>
 
-<span id="youtube-minimized-label">Examples of **mini-scenes** extraction are available on YouTube: [**`Giraffes`**](https://youtu.be/_whg7JULVb8), [**`Zebras`**](https://youtu.be/msalx6tQ8RM).</span>
+<span id="youtube-minimized-label">Examples of mini-scenes extraction are available on YouTube: [**`Giraffes`**](https://youtu.be/_whg7JULVb8), [**`Zebras`**](https://youtu.be/msalx6tQ8RM).</span>
 
 <table id="youtube-table">
     <thead>
@@ -208,7 +208,7 @@ div.gifs + table td,
 div.gifs + table th {
     border: none !important;
     padding: 1px !important;
-  	line-height: 14px !important;
+  	line-height: 0px !important;
 }
 
 #youtube-table {
