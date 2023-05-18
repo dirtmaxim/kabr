@@ -20,7 +20,22 @@ To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/u
 
 ![](assets/images/mini-scene.jpg)
 
-Examples of **mini-scenes** extraction are available on YouTube: [**`Giraffes`**](https://youtu.be/_whg7JULVb8), [**`Zebras`**](https://youtu.be/msalx6tQ8RM).
+Examples of mini-scenes extraction using the YOLOv8 object detection algorithm and improved SORT tracking algorithm can be found below, showcasing our technique of simulating the camera being perfectly aligned with each individual animal in the frame.
+
+<div id="youtube-table"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <iframe width="805" height="453" src="https://www.youtube-nocookie.com/embed/_whg7JULVb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </th>
+            <td>
+                <iframe width="805" height="453" src="https://www.youtube-nocookie.com/embed/msalx6tQ8RM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </td>
+        </tr>
+    </thead>
+</table>
 
 ---
 
@@ -97,7 +112,7 @@ ZG0XXX.X - Grevy's Zebras
 
 ---
 
-## Information:
+## Information
 
 ```
 KABR/configs: examples of SlowFast framework configs.
@@ -106,7 +121,7 @@ KABR/annotation/distribution.xlsx: distribution of classes for all videos.
 
 ---
 
-## Scripts:
+## Scripts
 
 We provide `image2video.py` and `image2visual.py` scripts to facilitate exploratory data analysis.
 
@@ -188,10 +203,24 @@ tr, td, th {
     border: none !important;
 }
 
-div.gifs + table tr, div.gifs + table td, div.gifs + table th {
+div.gifs + table tr,
+div.gifs + table td,
+div.gifs + table th {
     border: none !important;
     padding: 1px !important;
   	line-height: 14px !important;
+}
+
+div#youtube-table + table {
+    width: 835px !important;; 
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+div#youtube-table + table tr,
+div#youtube-table + table td,
+div#youtube-table + table th {
+    padding: 15px !important;
 }
 
 #auto-groom {
