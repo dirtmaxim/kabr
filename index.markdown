@@ -6,13 +6,42 @@ title: ""
 
 ![](assets/images/introduction.jpg)
 
-## Abstract
+## Overview
 
-_We present a novel high-quality dataset for animal behavior recognition from drone videos. The dataset is focused on Kenyan wildlife and contains behaviors of giraffes, plains zebras, and Grevy's zebras. The dataset consists of more than 10 hours of annotated videos, and it includes eight different classes, encompassing seven types of animal behavior and an additional category for occluded instances. In the annotation process for this dataset, a team of 10 people was involved, with an expert zoologist overseeing the process. Each behavior was labeled based on its distinctive features, using a standardized set of criteria to ensure consistency and accuracy across the annotations. The dataset was collected using drones that flew over the animals in the Mpala Research Centre in Kenya, providing high-quality video footage of the animal's natural behaviors. We believe that this dataset will be a valuable resource for researchers working on animal behavior recognition, as it provides a diverse and high-quality set of annotated videos that can be used for evaluating deep learning models. Additionally, the dataset can be used to study the behavior patterns of Kenyan animals and can help to inform conservation efforts and wildlife management strategies. We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area._
+JUST THOUGHT OF SOMETHING FOR THE SINGLE-BIND REVIEW PROCESS: WE'LL NEED TO AVOID COLLECTING INFORMATION ABOUT THE PEOPLE DOWNLOADING THE DATA.
+
+_We present a novel high-quality dataset for animal behavior recognition from drone videos. The dataset is focused on Kenyan wildlife and contains behaviors of giraffes, plains zebras, and Grevy's zebras. 
+
+The video that was curated to form the dataset was collected by flying drones over animals at the Mpala Research Centre in Kenya. (GIVE PERMITS AND SUCH AND HOW WE FOLLOWED PROTOCOL), providing almost XX hours, high-quality footage of animals' natural behaviors.  These were processed to form what we refer to as "mini-scenes" (GIVE A DEFINITION AND JUSTIFICATION, BUT THEN REFER TO THE PAPER)  
+
+Annotation process and what behaviors it produced
+
+Significance of the data set:  in situ imaging by drones
+
+Outline of the rest (much of what you have):
+
+. Miniscene examples.  REVIEW TO MAKE SURE THE COMPLEXITY OF THE ORIGINAL VIDEO AND THE SIMPLICITY OF THE MINI-SCENES IS CLEAR.  GET THESE AS CLOSE TO THE TOP OF THE PAGE AS POSSIBLE.
+
+. System diagram
+
+. Behavior distribution
+
+. Result summary
+
+. Code / weights and tools.  REMEMBER THE FAIR PRINCIPLES
+
+
+
+
+USE WHAT'S HERE TO FILL IN MORE ABOVE:
+
+The dataset consists of more than 10 hours of annotated videos, and it includes eight different classes, encompassing seven types of animal behavior and an additional category for occluded instances. In the annotation process for this dataset, a team of 10 people was involved, with an expert zoologist overseeing the process. Each behavior was labeled based on its distinctive features, using a standardized set of criteria to ensure consistency and accuracy across the annotations.  We believe that this dataset will be a valuable resource for researchers working on animal behavior recognition, as it provides a diverse and high-quality set of annotated videos that can be used for evaluating deep learning models. Additionally, the dataset can be used to study the behavior patterns of Kenyan animals and can help to inform conservation efforts and wildlife management strategies. We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area._
 
 ---
 
 ## Mini-Scenes
+
+THIS SHOULD BE IN THE PAPER, NOT HERE.  JUST A BIT OF IT SHOULD BE ABOVE.
 
 Our approach to extracting animal tracks from drone videos is a method that we refer to as **mini-scenes** extraction. This technique involves using object detection and tracking methods to simulate the camera being perfectly aligned with each individual animal in the frame. By using mini-scenes, we are able to compensate for any drone movements and provide a stable, zoomed-in representation of the animal's behavior. This approach allows for accurate tracking of individual animals within a group, making it particularly useful for studying social dynamics among animals.
 
@@ -40,7 +69,9 @@ To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/u
 ---
 
 ## Data Collection and Processing
-The drone videos were collected by our team at Mpala Research Centre, Kenya in January 2023. Animal behaviors of giraffes, plains zebras, and Grevy’s zebras were recorded using DJI Mavic 2S drones in 5.4K resolution.
+The drone videos were collected by our team at Mpala Research Centre, Kenya in January 2023. Animal behaviors of giraffes, plains zebras, and Grevy’s zebras were recorded using DJI Mavic 2S drones in 5.4K resolution.  MOVE THIS UP
+
+
 
 We developed [**`kabr-tools`**](https://github.com/dirtmaxim/kabr-tools) to create a layer between animal detection and manual correction of detected coordinates. These tools enable the identification of any inaccuracies in the automated process and provide a way to correct them in a timely and efficient manner. We also developed an interpolation tool that fills in any missed detections within a track, thereby increasing the overall tracking quality. This tool uses an algorithm that estimates the animal's location based on its previous movements, helping to fill in gaps where the automated detection may have failed. The complete data processing pipeline for the KABR dataset annotation is shown below:
 
@@ -104,6 +135,8 @@ The dataset can be directly loaded and processed by the [SlowFast](https://githu
 
 ## Naming
 
+EXPLAIN
+
 ```
 G0XXX.X - Giraffes
 ZP0XXX.X - Plains Zebras
@@ -142,6 +175,9 @@ For example, `[image/G0067.1, image/G0067.2, ..., image/G0067.24]` will be encod
 
 ## Experiments
 
+EXPLAIN
+
+
 | Method | All | Giraffes | Plains Zebras | Grevy’s Zebras |
 | :---: | :---: | :---: | :---: | :---: |
 | I3D (16x5) | 53.41 | 61.82 | 58.75 | 46.73 |
@@ -159,6 +195,8 @@ For example, `[image/G0067.1, image/G0067.2, ..., image/G0067.24]` will be encod
 ---
 
 ## Why mini-scenes? Motivation.
+
+I REALLY DON'T THINK THIS SHOULD BE HERE.  IT SHOULD BE IN THE PAPER AND WE SHOULD REFER TO THE PAPER.
 
 Action recognition, a challenging task in computer vision, is commonly addressed using either [action classification](https://arxiv.org/abs/1907.06987) or [action detection](https://arxiv.org/abs/2005.00214) techniques. However, we have developed an innovative approach that bridges the gap between action classification and action detection, which we refer to as mini-scenes classification. This approach combines the advantages of action detection while mitigating its limitations.
 
@@ -190,6 +228,8 @@ Due to the stabilization of the animal of interest at the center of the frame, t
 ## Acknowledgments and Disclosure of Funding
 
 This material is based upon work supported by the National Science Foundation under Award No. 2118240.
+
+REPEAT DAN'S PERMIT INFORMATION
 
 ---
 
