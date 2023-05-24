@@ -67,7 +67,7 @@ The dataset includes a total of eight categories that describe various animal be
 | **Graze** | ![](assets/gifs/examples/ZG0658-Graze.gif) | ![](assets/gifs/examples/ZG0728-Graze.gif) | ![](assets/gifs/examples/ZP0554-Graze.gif) |
 | **Browse** | ![](assets/gifs/examples/G0078-Browse.gif) | ![](assets/gifs/examples/G0097-Browse.gif) | ![](assets/gifs/examples/G0105-Browse.gif) |
 | **Head Up** | ![](assets/gifs/examples/G0069-Head_Up.gif) | ![](assets/gifs/examples/ZG0668-Head_Up.gif) | ![](assets/gifs/examples/ZP0630-Head_Up.gif) |
-| <span id="auto-groom">**Auto-Groom**</span> | ![](assets/gifs/examples/G0078-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0015-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0046-Auto-Groom.gif) |
+| <span id="auto-groom">**Auto-Groom**</span> | ![](assets/gifs/examples/ZG0015-Auto-Groom.gif) | ![](assets/gifs/examples/ZP0578-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0046-Auto-Groom.gif) |
 | **Trot** | ![](assets/gifs/examples/ZG0217-Trot.gif) | ![](assets/gifs/examples/ZP0187-Trot.gif) | ![](assets/gifs/examples/ZP0198-Trot.gif) |
 | **Run** | ![](assets/gifs/examples/G0068-Run.gif) | ![](assets/gifs/examples/ZP0192-Run.gif) | ![](assets/gifs/examples/ZP0600-Run.gif) |
 | **Occluded** | ![](assets/gifs/examples/ZG0665-Occluded.gif) | ![](assets/gifs/examples/ZP0225-Occluded.gif) | ![](assets/gifs/examples/ZP0463-Occluded.gif) |
