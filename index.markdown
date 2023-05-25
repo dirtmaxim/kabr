@@ -6,11 +6,24 @@ title: ""
 
 ![](assets/images/introduction.jpg)
 
+CAN WE USE A CROP FROM A DRONE VIDEO?
+
 ---
 
 ### **Overview**
 
-_We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset is focused on Kenyan wildlife and contains behaviors of giraffes, plains zebras, and Grevy's zebras. The videos curated to form the dataset were collected by flying drones over animals at the Mpala Research Centre in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F. The dataset consists of more than 10 hours of annotated videos, and it includes eight different classes, encompassing seven types of animal behavior and an additional category for occluded instances. In the annotation process for this dataset, a team of 10 people was involved, with an expert zoologist overseeing the process. Each behavior was labeled based on its distinctive features, using a standardized set of criteria to ensure consistency and accuracy across the annotations.  We believe that this dataset will be a valuable resource for researchers working on animal behavior recognition, as it provides a diverse set of annotated videos that can be used for evaluating deep learning models. Additionally, the dataset can be used to study the behavior patterns of Kenyan animals and can help to inform conservation efforts and wildlife management strategies. We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area._
+_We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset, curated from videos taken of Kenyan wildlife, currently contains behaviors of giraffes, plains zebras, and Grevy's zebras, and will soon be expanded to other species, including baboons. The videos were collected by flying drones over animals at the Mpala Research Centre in Kenya in January 2023. The dataset consists of more than 10 hours of extracted videos, each centered on a particular animal and annotated with seven types of behaviors along with an additional category for occluded views. Ten non-experts contributed annotations, overseen by an expert in animal behavior who develop a standardized set of criteria to ensure consistency and accuracy across the annotations.  The drone videos were taken using the permission of Research License No. NACOSTI/P/22/18214, following a protocol that strictly adheres to guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F.
+
+This dataset will be a valuable resource for experts in both machine learning and animal behavior:
+
+- It provides a challenging testbed for the development of new machine learning algorithms for animal behavior recognition. It complements recently released, larger datasets that used videos scraped from on-line sources [CITATION TO ANIMAL KINGDOM AND ...] because it was gathered *in situ* and therefore is more representative of how behavior recognition algorithms may be used in practice.
+
+- It demonstrates the effectiveness of a new animal behavior curation pipeline for videos collected *in situ* using drones. 
+- It provides a test set for evaluating the impact of a change in field work protocols by research scientists studying animal behavior to the use of drones and recorded videos. 
+
+[I THINK THE REST OF THIS PARAGRAPH CAN BE REMOVED.]
+, as it provides a diverse set of annotated videos that can be used for evaluating deep learning models. Additionally, the dataset can be used to study the behavior patterns of Kenyan animals and can help to inform conservation efforts and wildlife management strategies. We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area. 
+_
 
 ---
 
@@ -18,13 +31,13 @@ _We present a novel in-situ dataset for animal behavior recognition from drone v
 
 ![](assets/images/mini-scene.jpg)
 
-Our approach to extracting animal tracks from drone videos is a method that we refer to as **mini-scenes** extraction. This technique involves using object detection and tracking methods to simulate the camera being perfectly aligned with each individual animal in the frame. By using mini-scenes, we are able to compensate for any drone movements and provide a stable, zoomed-in representation of the animal's behavior. This approach allows for accurate tracking of individual animals within a group, making it particularly useful for studying social dynamics among animals.
+Our approach to curating animal behaviors from drone videos is a method that we refer to as **mini-scenes** extraction. We use object detection and tracking methods to simulate centering the camera's field of view on each indivdiual animal, and zooming in on the animal and its immediate surroundings. This compensates for drone and animal movements and provides a focused context for categorizing individual animal behavior. Study of social interactions and group behaviors, while not the subject of the current work, may naturally be based on combinations of miniscenes. 
 
 ---
 
 ### **Extraction**
 
-To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/ultralytics/ultralytics) object detection algorithm to detect the animals in each frame and improved [SORT](https://arxiv.org/abs/1602.00763) tracking algorithm to follow their movement. We then extracted a small window around each animal to create the mini-scenes.
+To implement our mini-scenes approach, we utilize [YOLOv8](https://github.com/ultralytics/ultralytics) object detection algorithm to detect the animals in each frame and an improved version of the [SORT](https://arxiv.org/abs/1602.00763) tracking algorithmt. We then extract a small window around each animal in frame of a resulting track to create a single mini-scene.
 
 <span id="youtube-standard-label">Examples of mini-scenes extraction are available on YouTube:</span>
 
@@ -47,6 +60,8 @@ To implement our mini-scenes approach, we utilized [YOLOv8](https://github.com/u
 
 ### **Data Collection and Processing**
 The drone videos were collected by our team at Mpala Research Centre, Kenya in January 2023. Animal behaviors of giraffes, plains zebras, and Grevy’s zebras were recorded using DJI Mavic 2S drones in 5.4K resolution.
+
+[ SHOW THE DATA PROCESSING PIPELINE AND EXPLAIN IT.  ALSO, from what's here, I have no idea what kabr-tools is doing at any level of detail.  PROBABLY LEAVE OUT EXCEPT FOR AN OUTLINE OF WHAT'S IN GITHUB]
 
 We developed [**`kabr-tools`**](https://github.com/dirtmaxim/kabr-tools) to create a layer between animal detection and manual correction of detected coordinates. These tools enable the identification of any inaccuracies in the automated process and provide a way to correct them in a timely and efficient manner. We also developed an interpolation tool that fills in any missed detections within a track, thereby increasing the overall tracking quality. This tool uses an algorithm that estimates the animal's location based on its previous movements, helping to fill in gaps where the automated detection may have failed. The complete data processing pipeline for the KABR dataset annotation is shown below:
 
@@ -76,6 +91,8 @@ The dataset includes a total of eight categories that describe various animal be
 
 ### **Experiments**
 
+REQUIRES AN EXPLANATION
+
 | Method | All | Giraffes | Plains Zebras | Grevy’s Zebras |
 | :---: | :---: | :---: | :---: | :---: |
 | I3D (16x5) | 53.41 | 61.82 | 58.75 | 46.73 |
@@ -86,6 +103,8 @@ The dataset includes a total of eight categories that describe various animal be
 
 ### **Demo**
 
+REQUIRES AN EXPLANATION
+
 | Method | Video |
 | :---: | :---: |
 | **X3D (16x5)** | ![](assets/videos/ZG0717.gif) |
@@ -94,7 +113,7 @@ The dataset includes a total of eight categories that describe various animal be
 
 ### **Visualization**
 
-By analyzing the gradient information flowing into the final convolutional layers of the network, [Grad-CAM](https://arxiv.org/abs/1610.02391) generates a heat map that highlights the regions of the image that contribute most significantly to the network's decision. In our case, Grad-CAM demonstrates that the neural network indeed prioritizes the exact animal in the center of the frame. There are two exceptions to consider: `Run` and `Occluded` categories. In the case of `Run`, the background changes very rapidly, which allows the network to identify it as `Run`. In the case of the `Occluded` category, where the animal is not visible within the frame, the network shifts its attention to focus on other objects present.
+By analyzing the gradient information flowing into the final convolutional layers of the network, [Grad-CAM](https://arxiv.org/abs/1610.02391) generates a heat map that highlights the regions of the image that contribute most significantly to the network's decision. This demonstrates here that the neural network typically prioritizes the animal in the center of the frame. Interestingly, for the 'Run' behavior, because the animal remains in the center of the miniscene more of the background is used to classify the movement.  Also, for the  `Occluded` category, where the animal partially or completely hidden within the frame, the network shifts its attention to focus on other objects present.
 
 <div class="gifs"></div>
 
@@ -112,6 +131,8 @@ By analyzing the gradient information flowing into the final convolutional layer
 ### **Format**
 
 The KABR dataset follows the [Charades](https://arxiv.org/abs/1604.01753) format:
+
+[ MAYBE LEAVE THIS OUT. IT REALLY DOES NOT ADD ANYTHING. ]
 
 ```
 KABR
@@ -145,6 +166,8 @@ The dataset can be directly loaded and processed by the [SlowFast](https://githu
 
 ### **Naming**
 
+[ I HAVE NO IDEA WHAT THIS IS! ]
+
 <pre>
 <b>G</b>0XXX.X - Giraffes
 <b>ZP</b>0XXX.X - Plains Zebras
@@ -163,6 +186,8 @@ KABR/annotation/distribution.xlsx: distribution of classes for all videos.
 ---
 
 ### **Scripts**
+
+[ NOT ENOUGH CONTEXT FOR WHAT THIS IS DOING. ]
 
 We provide `image2video.py` and `image2visual.py` scripts to facilitate exploratory data analysis.
 
@@ -183,7 +208,7 @@ For example, `[image/G0067.1, image/G0067.2, ..., image/G0067.24]` will be encod
 
 ### **Acknowledgments and Disclosure of Funding**
 
-This material is based upon work supported by the National Science Foundation under Award No. 2118240. The data was gathered at the Mpala Research Centre in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F.
+This material is based upon work supported by the National Science Foundation under Award No. 2118240 [ADD ICICLE]. The data was gathered at the Mpala Research Centre in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F.
 
 ---
 
