@@ -10,13 +10,13 @@ title: ""
 
 ### **Overview**
 
-_We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset, curated from videos taken of Kenyan wildlife, currently contains behaviors of giraffes, plains zebras, and Grevy's zebras, and will soon be expanded to other species, including baboons. The videos were collected by flying drones over animals at the Mpala Research Centre in Kenya in January 2023. The dataset consists of more than 10 hours of extracted videos, each centered on a particular animal and annotated with seven types of behaviors along with an additional category for occluded views. Ten non-experts contributed annotations, overseen by an expert in animal behavior who develop a standardized set of criteria to ensure consistency and accuracy across the annotations.  The drone videos were taken using the permission of Research License No. NACOSTI/P/22/18214, following a protocol that strictly adheres to guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F. This dataset will be a valuable resource for experts in both machine learning and animal behavior:_
+_We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset, curated from videos taken of Kenyan wildlife, currently contains behaviors of giraffes, plains zebras, and Grevy's zebras, and will soon be expanded to other species, including baboons. The videos were collected by flying drones over animals at the Mpala Research Centre in Kenya in January 2023. The dataset consists of more than 10 hours of extracted videos, each centered on a particular animal and annotated with seven types of behaviors along with an additional category for occluded views. Ten non-experts contributed annotations, overseen by an expert in animal behavior who developed a standardized set of criteria to ensure consistency and accuracy across the annotations.  The drone videos were taken using the permission of Research License No. NACOSTI/P/22/18214, following a protocol that strictly adheres to guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F. This dataset will be a valuable resource for experts in both machine learning and animal behavior:_
 
-- _It provides a challenging data for the development of new machine learning algorithms for animal behavior recognition. It complements recently released, larger [datasets](https://arxiv.org/abs/2204.08129) that used videos scraped from online sources because it was gathered in-situ and therefore is more representative of how behavior recognition algorithms may be used in practice._
+- _It provides challenging data for the development of new machine-learning algorithms for animal behavior recognition. It complements recently released, larger [datasets](https://arxiv.org/abs/2204.08129) that used videos scraped from online sources because it was gathered in-situ and therefore is more representative of how behavior recognition algorithms may be used in practice._
 
 - _It demonstrates the effectiveness of a new animal behavior curation pipeline for videos collected in-situ using drones._
 
-- _It provides a test set for evaluating the impact of a change in field work protocols by research scientists studying animal behavior to the use of drones and recorded videos._ 
+- _It provides a test set for evaluating the impact of a change in fieldwork protocols by research scientists studying animal behavior to the use of drones and recorded videos._ 
 
 _We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area._
 
@@ -26,13 +26,13 @@ _We provide a detailed description of the dataset and its annotation process, al
 
 ![](assets/images/mini-scene.jpg)
 
-Our approach to curating animal behaviors from drone videos is a method that we refer to as **mini-scenes** extraction. We use object detection and tracking methods to simulate centering the camera's field of view on each indivdiual animal, and zooming in on the animal and its immediate surroundings. This compensates for drone and animal movements and provides a focused context for categorizing individual animal behavior. Study of social interactions and group behaviors, while not the subject of the current work, may naturally be based on combinations of miniscenes. 
+Our approach to curating animal behaviors from drone videos is a method that we refer to as **mini-scenes** extraction. We use object detection and tracking methods to simulate centering the camera's field of view on each individual animal and zooming in on the animal and its immediate surroundings. This compensates for drone and animal movements and provides a focused context for categorizing individual animal behavior. The study of social interactions and group behaviors, while not the subject of the current work, may naturally be based on combinations of miniscenes. 
 
 ---
 
 ### **Extraction**
 
-To implement our mini-scenes approach, we utilize [YOLOv8](https://github.com/ultralytics/ultralytics) object detection algorithm to detect the animals in each frame and an improved version of the [SORT](https://arxiv.org/abs/1602.00763) tracking algorithmt. We then extract a small window around each animal in frame of a resulting track to create a single mini-scene.
+To implement our mini-scenes approach, we utilize [YOLOv8](https://github.com/ultralytics/ultralytics) object detection algorithm to detect the animals in each frame and an improved version of the [SORT](https://arxiv.org/abs/1602.00763) tracking algorithm. We then extract a small window around each animal in the frame of a resulting track to create a single mini-scene.
 
 <span id="youtube-standard-label">Examples of mini-scenes extraction are available on YouTube:</span>
 
@@ -108,7 +108,7 @@ Here you can see an example of the performance of the **X3D** model on unseen da
 
 ### **Visualization**
 
-By analyzing the gradient information flowing into the final convolutional layers of the network, [Grad-CAM](https://arxiv.org/abs/1610.02391) generates a heat map that highlights the regions of the image that contribute most significantly to the network's decision. This demonstrates here that the neural network typically prioritizes the animal in the center of the frame. Interestingly, for the `Run` behavior, because the animal remains in the center of the mini-scene more of the background is used to classify the movement.  Also, for the  `Occluded` category, where the animal partially or completely hidden within the frame, the network shifts its attention to focus on other objects present.
+By analyzing the gradient information flowing into the final convolutional layers of the network, [Grad-CAM](https://arxiv.org/abs/1610.02391) generates a heat map that highlights the regions of the image that contribute most significantly to the network's decision. This demonstrates here that the neural network typically prioritizes the animal in the center of the frame. Interestingly, for the `Run` behavior, because the animal remains in the center of the mini-scene more of the background is used to classify the movement.  Also, for the  `Occluded` category, where the animal is partially or completely hidden within the frame, the network shifts its attention to focus on other objects present.
 
 <div class="gifs"></div>
 
