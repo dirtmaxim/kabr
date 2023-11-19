@@ -203,7 +203,12 @@ _This material is based upon work supported by the National Science Foundation u
 
 ### **Citation**
 ```BibTeX
-Coming soon...
+@inproceedings{kholiavchenko2024kabr,
+  title={KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos},
+  author={Kholiavchenko, Maksim and Kline, Jenna and Ramirez, Michelle and Stevens, Sam and Sheets, Alec and Babu, Reshma and Banerji, Namrata and Campolongo, Elizabeth and Thompson, Matthew and Van Tiel, Nina and Miliko, Jackson and Bessa, Eduardo and Duporge, Isla and Berger-Wolf, Tanya and Rubenstein, Daniel and Stewart, Charles},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  year={2024}
+}
 ```
 
 <style>
