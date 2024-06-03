@@ -197,7 +197,9 @@ For example, `[image/G0067.1, image/G0067.2, ..., image/G0067.24]` will be encod
 
 ### **Acknowledgments and Disclosure of Funding**
 
-_This material is based upon work supported by the National Science Foundation under Award No. 2118240  and Award No. 2112606. The data was gathered at the Mpala Research Centre in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F._
+_This material is based upon work supported by the National Science Foundation under [Award No. 2118240](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240) ([Imageomics](https://imageomics.org): A New Frontier of Biological Information Powered by Knowledge-Guided Machine Learning) and [Award No. 2112606](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2112606) (AI Institute for Intelligent Cyberinfrastructure with Computational Learning in the Environment ([ICICLE](https://icicle.osu.edu/))). Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation._
+
+_The data was gathered at the [Mpala Research Centre](https://mpala.org/) in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F._
 
 ---
 
