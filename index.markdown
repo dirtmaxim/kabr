@@ -10,15 +10,15 @@ title: ""
 
 ### **Overview**
 
-_We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset, curated from videos taken of Kenyan wildlife, currently contains behaviors of giraffes, plains zebras, and Grevy's zebras, and will soon be expanded to other species, including baboons. The videos were collected by flying drones over animals at the Mpala Research Centre in Kenya in January 2023. The dataset consists of more than 10 hours of extracted videos, each centered on a particular animal and annotated with seven types of behaviors along with an additional category for occluded views. Ten non-experts contributed annotations, overseen by an expert in animal behavior who developed a standardized set of criteria to ensure consistency and accuracy across the annotations.  The drone videos were taken using the permission of Research License No. NACOSTI/P/22/18214, following a protocol that strictly adheres to guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F. This dataset will be a valuable resource for experts in both machine learning and animal behavior:_
+We present a novel in-situ dataset for animal behavior recognition from drone videos. The dataset, curated from videos taken of Kenyan wildlife, currently contains behaviors of giraffes, plains zebras, and Grevy's zebras, and will soon be expanded to other species, including baboons. The videos were collected by flying drones over animals at the Mpala Research Centre in Kenya in January 2023. The dataset consists of more than 10 hours of extracted videos, each centered on a particular animal and annotated with seven types of behaviors along with an additional category for occluded views. Ten non-experts contributed annotations, overseen by an expert in animal behavior who developed a standardized set of criteria to ensure consistency and accuracy across the annotations.  The drone videos were taken using the permission of Research License No. NACOSTI/P/22/18214, following a protocol that strictly adheres to guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F. This dataset will be a valuable resource for experts in both machine learning and animal behavior:
 
-- _It provides challenging data for the development of new machine-learning algorithms for animal behavior recognition. It complements recently released, larger [datasets](https://arxiv.org/abs/2204.08129) that used videos scraped from online sources because it was gathered in-situ and therefore is more representative of how behavior recognition algorithms may be used in practice._
+- It provides challenging data for the development of new machine-learning algorithms for animal behavior recognition. It complements recently released, larger [datasets](https://arxiv.org/abs/2204.08129) that used videos scraped from online sources because it was gathered in-situ and therefore is more representative of how behavior recognition algorithms may be used in practice.
 
-- _It demonstrates the effectiveness of a new animal behavior curation pipeline for videos collected in-situ using drones._
+- It demonstrates the effectiveness of a new animal behavior curation pipeline for videos collected in-situ using drones.
 
-- _It provides a test set for evaluating the impact of a change in fieldwork protocols by research scientists studying animal behavior to the use of drones and recorded videos._ 
+- It provides a test set for evaluating the impact of a change in fieldwork protocols by research scientists studying animal behavior to the use of drones and recorded videos.
 
-_We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area._
+We provide a detailed description of the dataset and its annotation process, along with some initial experiments on the dataset using conventional deep learning models. The results demonstrate the effectiveness of the dataset for animal behavior recognition and highlight the potential for further research in this area.
 
 ---
 
@@ -197,7 +197,7 @@ For example, `[image/G0067.1, image/G0067.2, ..., image/G0067.24]` will be encod
 
 ### **Acknowledgments**
 
-This material is based upon work supported by the National Science Foundation under Award No. [Award No. 2118240](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240) and Award No. [Award No. 2112606](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2112606). ID was supported by the National Academy of Sciences Research Associate Program and the United States Army Research Laboratory while conducting this study. ID collected all the UAV data on a Civil Aviation Authority Drone License CAA NQE Approval Number: 0216/1365 in conjunction with authorization from a KCAA operator under a Remote Pilot License. The data was gathered at the Mpala Research Centre in Kenya, in accordance with Research License No. NACOSTI/P/22/18214. The data collection protocol adhered strictly to the guidelines set forth by the Institutional Animal Care and Use Committee under permission No. IACUC 1835F.
+This material is based upon work supported by the National Science Foundation under [Award No. 2118240](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240) and [Award No. 2112606](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2112606) (AI Institute for Intelligent Cyberinfrastructure with Computational Learning in the Environment ([ICICLE](https://icicle.osu.edu))). Any opinions, findings, conclusions, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 ---
 
