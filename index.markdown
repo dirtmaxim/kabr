@@ -202,6 +202,9 @@ This material is based upon work supported by the National Science Foundation un
 ---
 
 ### **Citation**
+
+KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos:
+
 ```BibTeX
 @inproceedings{kholiavchenko2024kabr,
   title={KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos},
@@ -209,6 +212,19 @@ This material is based upon work supported by the National Science Foundation un
   booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
   pages={31-40},
   year={2024}
+}
+```
+
+Deep Dive into KABR: A Dataset for Understanding Ungulate Behavior from In-Situ Drone Video:
+
+```BibTeX
+@article{kholiavchenko2024deep,
+  title={Deep dive into KABR: a dataset for understanding ungulate behavior from in-situ drone video},
+  author={Kholiavchenko, Maksim and Kline, Jenna and Kukushkin, Maksim and Brookes, Otto and Stevens, Sam and Duporge, Isla and Sheets, Alec and Babu, Reshma R and Banerji, Namrata and Campolongo, Elizabeth and others},
+  journal={Multimedia Tools and Applications},
+  pages={1--20},
+  year={2024},
+  publisher={Springer}
 }
 ```
 
