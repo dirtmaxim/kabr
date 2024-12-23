@@ -203,7 +203,7 @@ This material is based upon work supported by the National Science Foundation un
 
 ### **Citation**
 
-KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos:
+KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos
 
 ```BibTeX
 @inproceedings{kholiavchenko2024kabr,
@@ -215,7 +215,7 @@ KABR: In-Situ Dataset for Kenyan Animal Behavior Recognition from Drone Videos:
 }
 ```
 
-Deep Dive into KABR: A Dataset for Understanding Ungulate Behavior from In-Situ Drone Video:
+Deep Dive into KABR: A Dataset for Understanding Ungulate Behavior from In-Situ Drone Video
 
 ```BibTeX
 @article{kholiavchenko2024deep,
