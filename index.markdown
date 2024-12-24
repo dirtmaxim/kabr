@@ -94,7 +94,7 @@ We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.or
 | SlowFast<br> (16x5, 4x5) | 52.92 | 61.15 | 60.60 | 47.42 |
 | X3D (16x5) | **61.9** | **65.1** | **63.11** | **51.16** |
 
-Extended evaluation is available [here]([https://arxiv.org/abs/1705.07750](https://link.springer.com/article/10.1007/s11042-024-20512-4)).
+Extended evaluation is available [here](https://link.springer.com/article/10.1007/s11042-024-20512-4).
 
 ---
 
