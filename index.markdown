@@ -230,6 +230,8 @@ Deep Dive into KABR: A Dataset for Understanding Ungulate Behavior from In-Situ 
 }
 ```
 
+---
+
 ### **See Also**
 
 <a href="https://dirtmaxim.github.io/BaboonLand" id="see-also-link">BaboonLand Dataset</a>
