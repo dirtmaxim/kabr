@@ -70,29 +70,36 @@ The dataset includes a total of eight categories that describe various animal be
 
 <div class="gifs"></div>
 
-| **Walk** | ![](assets/gifs/examples/G0073-Walk.gif) | ![](assets/gifs/examples/ZP0632-Walk.gif) | ![](assets/gifs/examples/ZG0658-Walk.gif) |
-| :---: | :---: | :---: | :---: |
-| **Graze** | ![](assets/gifs/examples/ZG0658-Graze.gif) | ![](assets/gifs/examples/ZG0728-Graze.gif) | ![](assets/gifs/examples/ZP0554-Graze.gif) |
-| **Browse** | ![](assets/gifs/examples/G0078-Browse.gif) | ![](assets/gifs/examples/G0097-Browse.gif) | ![](assets/gifs/examples/G0105-Browse.gif) |
-| **Head Up** | ![](assets/gifs/examples/G0069-Head_Up.gif) | ![](assets/gifs/examples/ZG0668-Head_Up.gif) | ![](assets/gifs/examples/ZP0630-Head_Up.gif) |
+|                  **Walk**                   |    ![](assets/gifs/examples/G0073-Walk.gif)     |    ![](assets/gifs/examples/ZP0632-Walk.gif)    |    ![](assets/gifs/examples/ZG0658-Walk.gif)    |
+| :-----------------------------------------: | :---------------------------------------------: | :---------------------------------------------: | :---------------------------------------------: |
+|                  **Graze**                  |   ![](assets/gifs/examples/ZG0658-Graze.gif)    |   ![](assets/gifs/examples/ZG0728-Graze.gif)    |   ![](assets/gifs/examples/ZP0554-Graze.gif)    |
+|                 **Browse**                  |   ![](assets/gifs/examples/G0078-Browse.gif)    |   ![](assets/gifs/examples/G0097-Browse.gif)    |   ![](assets/gifs/examples/G0105-Browse.gif)    |
+|                 **Head Up**                 |   ![](assets/gifs/examples/G0069-Head_Up.gif)   |  ![](assets/gifs/examples/ZG0668-Head_Up.gif)   |  ![](assets/gifs/examples/ZP0630-Head_Up.gif)   |
 | <span id="auto-groom">**Auto-Groom**</span> | ![](assets/gifs/examples/ZG0015-Auto-Groom.gif) | ![](assets/gifs/examples/ZP0578-Auto-Groom.gif) | ![](assets/gifs/examples/ZG0046-Auto-Groom.gif) |
-| **Trot** | ![](assets/gifs/examples/ZG0217-Trot.gif) | ![](assets/gifs/examples/ZP0187-Trot.gif) | ![](assets/gifs/examples/ZP0198-Trot.gif) |
-| **Run** | ![](assets/gifs/examples/G0068-Run.gif) | ![](assets/gifs/examples/ZP0192-Run.gif) | ![](assets/gifs/examples/ZP0600-Run.gif) |
-| **Occluded** | ![](assets/gifs/examples/ZG0665-Occluded.gif) | ![](assets/gifs/examples/ZP0225-Occluded.gif) | ![](assets/gifs/examples/ZP0463-Occluded.gif) |
+|                  **Trot**                   |    ![](assets/gifs/examples/ZG0217-Trot.gif)    |    ![](assets/gifs/examples/ZP0187-Trot.gif)    |    ![](assets/gifs/examples/ZP0198-Trot.gif)    |
+|                   **Run**                   |     ![](assets/gifs/examples/G0068-Run.gif)     |    ![](assets/gifs/examples/ZP0192-Run.gif)     |    ![](assets/gifs/examples/ZP0600-Run.gif)     |
+|                **Occluded**                 |  ![](assets/gifs/examples/ZG0665-Occluded.gif)  |  ![](assets/gifs/examples/ZP0225-Occluded.gif)  |  ![](assets/gifs/examples/ZP0463-Occluded.gif)  |
 
 ---
 
 ### **Experiments**
 
-We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.org/abs/1812.03982), and [X3D](https://arxiv.org/abs/2004.04730) models on our dataset and report Top-1 accuracy for all species, giraffes, plain zebras, and Grevy's zebras.
+We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.org/abs/1812.03982), [X3D](https://arxiv.org/abs/2004.04730) and [UniformerV2](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_UniFormerV2_Unlocking_the_Potential_of_Image_ViTs_for_Video_Understanding_ICCV_2023_paper.pdf) models on our dataset and report Top-1 accuracy for all species, giraffes, plain zebras, and Grevy's zebras.
 
 <div class="experiments"></div>
 
-| Method | All | Giraffes | Plains Zebras | Grevy’s Zebras |
-| :---: | :---: | :---: | :---: | :---: |
-| I3D (16x5) | 53.41 | 61.82 | 58.75 | 46.73 |
-| SlowFast<br> (16x5, 4x5) | 52.92 | 61.15 | 60.60 | 47.42 |
-| X3D (16x5) | **61.9** | **65.1** | **63.11** | **51.16** |
+
+|          Method           |                                                                                 Weight initialization                                                                                 |    All    | Giraffes | Plains Zebras | Grevy’s Zebras |
+| :-----------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------: | :------: | :-----------: | :------------: |
+|        I3D (16x5)         |                                                                                        Random                                                                                         |   53.41   |   61.8   |     58.7      |      46.7      |
+|        I3D (16x5)         |                                                                                     Kinetics-400                                                                                      |   65.06   |   76.3   |     58.5      |    **70.6**    |
+| SlowFast<br> (16x5, 4x5)  |                                                                                        Random                                                                                         |   52.92   |   61.1   |     60.6      |      47.4      |
+| SlowFast<br> (16x5, 4x5)  |                                                                                     Kinetics-400                                                                                      |   66.10   | **83.5** |   **66.3**    |      68.3      |
+|       X3D-L (16x5)        |                                                                                        Random                                                                                         |   61.90   |   65.1   |     63.1      |      51.1      |
+|       X3D-L (16x5)        |                                                                                     Kinetics-400                                                                                      | **66.36** |   83.0   |     61.8      |      69.3      |
+| UniformerV2-B <br> (16x5) | Kinetics-400 + [Kinetics-710](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_UniFormerV2_Unlocking_the_Potential_of_Image_ViTs_for_Video_Understanding_ICCV_2023_paper.pdf) |   61.78   |   73.2   |     66.1      |      68.2      |
+
+
 
 Extended evaluation is available [here](https://link.springer.com/article/10.1007/s11042-024-20512-4).
 
@@ -114,13 +121,13 @@ By analyzing the gradient information flowing into the final convolutional layer
 
 <div class="gifs"></div>
 
-| ![](assets/gifs/grad-cams/walk_1.gif) | ![](assets/gifs/grad-cams/walk_2.gif) | ![](assets/gifs/grad-cams/walk_3.gif) | ![](assets/gifs/grad-cams/walk_4.gif) |
- :---: | :---: | :---: | :---: |
-| ![](assets/gifs/grad-cams/graze_1.gif) | ![](assets/gifs/grad-cams/graze_2.gif) | ![](assets/gifs/grad-cams/graze_3.gif) | ![](assets/gifs/grad-cams/graze_4.gif) |
-| ![](assets/gifs/grad-cams/browse_1.gif) | ![](assets/gifs/grad-cams/browse_2.gif) | ![](assets/gifs/grad-cams/browse_3.gif) | ![](assets/gifs/grad-cams/browse_4.gif) |
-| ![](assets/gifs/grad-cams/head_up_1.gif) | ![](assets/gifs/grad-cams/head_up_2.gif) | ![](assets/gifs/grad-cams/head_up_3.gif) | ![](assets/gifs/grad-cams/head_up_4.gif) |
-| ![](assets/gifs/grad-cams/trot_1.gif) | ![](assets/gifs/grad-cams/trot_2.gif) | ![](assets/gifs/grad-cams/trot_3.gif) | ![](assets/gifs/grad-cams/trot_4.gif) |
-| ![](assets/gifs/grad-cams/run_1.gif) | ![](assets/gifs/grad-cams/run_2.gif) | ![](assets/gifs/grad-cams/run_3.gif) | ![](assets/gifs/grad-cams/run_4.gif) |
+|   ![](assets/gifs/grad-cams/walk_1.gif)   |   ![](assets/gifs/grad-cams/walk_2.gif)   |   ![](assets/gifs/grad-cams/walk_3.gif)   |   ![](assets/gifs/grad-cams/walk_4.gif)   |
+| :---------------------------------------: | :---------------------------------------: | :---------------------------------------: | :---------------------------------------: |
+|  ![](assets/gifs/grad-cams/graze_1.gif)   |  ![](assets/gifs/grad-cams/graze_2.gif)   |  ![](assets/gifs/grad-cams/graze_3.gif)   |  ![](assets/gifs/grad-cams/graze_4.gif)   |
+|  ![](assets/gifs/grad-cams/browse_1.gif)  |  ![](assets/gifs/grad-cams/browse_2.gif)  |  ![](assets/gifs/grad-cams/browse_3.gif)  |  ![](assets/gifs/grad-cams/browse_4.gif)  |
+| ![](assets/gifs/grad-cams/head_up_1.gif)  | ![](assets/gifs/grad-cams/head_up_2.gif)  | ![](assets/gifs/grad-cams/head_up_3.gif)  | ![](assets/gifs/grad-cams/head_up_4.gif)  |
+|   ![](assets/gifs/grad-cams/trot_1.gif)   |   ![](assets/gifs/grad-cams/trot_2.gif)   |   ![](assets/gifs/grad-cams/trot_3.gif)   |   ![](assets/gifs/grad-cams/trot_4.gif)   |
+|   ![](assets/gifs/grad-cams/run_1.gif)    |   ![](assets/gifs/grad-cams/run_2.gif)    |   ![](assets/gifs/grad-cams/run_3.gif)    |   ![](assets/gifs/grad-cams/run_4.gif)    |
 | ![](assets/gifs/grad-cams/occluded_1.gif) | ![](assets/gifs/grad-cams/occluded_2.gif) | ![](assets/gifs/grad-cams/occluded_3.gif) | ![](assets/gifs/grad-cams/occluded_4.gif) |
 
 ---
