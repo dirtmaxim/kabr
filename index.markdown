@@ -84,7 +84,11 @@ The dataset includes a total of eight categories that describe various animal be
 
 ### **Experiments**
 
+
+**1. Behavior recognition benchmarks**
+
 We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.org/abs/1812.03982), [X3D](https://arxiv.org/abs/2004.04730) and [UniformerV2](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_UniFormerV2_Unlocking_the_Potential_of_Image_ViTs_for_Video_Understanding_ICCV_2023_paper.pdf) models on our dataset and report Top-1 accuracy for all species, giraffes, plain zebras, and Grevy's zebras.
+
 
 <div class="experiments"></div>
 
@@ -99,6 +103,21 @@ We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.or
 |       X3D-L (16x5)        |                                                                                     Kinetics-400                                                                                      | **66.36** |   83.0   |     61.8      |      69.3      |
 | UniformerV2-B <br> (16x5) | Kinetics-400 + [Kinetics-710](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_UniFormerV2_Unlocking_the_Potential_of_Image_ViTs_for_Video_Understanding_ICCV_2023_paper.pdf) |   61.78   |   73.2   |     66.1      |      68.2      |
 
+**2. Behavior action recognition benchmarks**
+
+We evaluate [I3D](https://arxiv.org/abs/1705.07750), [SlowFast](https://arxiv.org/abs/1812.03982), [X3D](https://arxiv.org/abs/2004.04730) and [UniformerV2](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_UniFormerV2_Unlocking_the_Potential_of_Image_ViTs_for_Video_Understanding_ICCV_2023_paper.pdf) models on our dataset and report Top-1 accuracy for all actions, averaged over all species.
+
+
+|   Action   |    I3D    | SlowFast  |    X3D    | UniformerV2 |
+| :--------: | :-------: | :-------: | :-------: | :---------: |
+|    Walk    |   96.53   |   96.60   | **97.16** |    94.73    |
+|   Graze    | **97.10** |   96.25   |   96.15   |    96.10    |
+|   Browse   |   40.50   | **55.20** |   43.10   |    54.40    |
+|  Head up   | **94.33** |   93.96   |   94.16   |    92.53    |
+| Auto-Groom | **13.00** |   5.40    |   11.35   |    11.60    |
+|    Trot    |   48.70   | **66.20** |   53.90   |    60.20    |
+|    Run     |   77.10   | **91.30** |   87.26   |    76.73    |
+|  Occluded  |   23.55   |   20.15   |   19.90   |  **25.75**  |
 
 
 Extended evaluation is available [here](https://link.springer.com/article/10.1007/s11042-024-20512-4).
